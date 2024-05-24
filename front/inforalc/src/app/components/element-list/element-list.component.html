@@ -1,0 +1,52 @@
+<app-header-admin></app-header-admin>
+
+        <!-- Page Content List Products-->
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">                
+                Sistema de Control de Inventario -  <small>Equipos</small>
+            </h1>
+        
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+                <li class="breadcrumb-item active">Ver Equipos</li>
+            </ol>
+        
+            <a class="btn btn-primary"> Crear Equipo</a>
+            <h2>Equipos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Equipo</th>
+                        <th>Marca</th>
+                        <th>CPU</th>
+                        <th>Mother</th>
+                        <th>Hdd</th>
+                        <th>Memoria</th>
+                        <th>S.O.</th>
+                        <th>Nro.Ip</th>
+                        <th>Lugar</th>
+                        <th>Antivirus</th>                        
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let e of elements">
+                    <tr>
+                        <td>{{e.nameElement}}</td>
+                        <td>{{e.brand}}</td>
+                        <td>{{e.cpu}}</td>
+                        <td>{{e.mother}}</td>
+                        <td>{{e.hdd}}</td>
+                        <td>{{e.memory}}</td>
+                        <td>{{e.so}}</td>
+                        <td>{{e.ipNumber}}</td>
+                        <td>{{e.workplace}}</td>
+                        <td>{{e.antivirus}}</td>
+                        <td><button class="btn btn-warning">Editar</button> </td>
+                        <td><button class="btn btn-danger">Eliminar</button>
+                    </tr>
+                </tbody>
+            </table>        
+        </div>
+
