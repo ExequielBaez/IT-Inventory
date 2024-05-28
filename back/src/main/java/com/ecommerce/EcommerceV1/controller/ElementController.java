@@ -52,8 +52,8 @@ public class ElementController {
                                            @RequestParam("ipNumber") String ipNumber,
                                            @RequestParam("workplace") String workplace,
                                            @RequestParam("antivirus") String antivirus,
-                                           @RequestParam("parte") Boolean parte,
-                                           @RequestParam("ocsInventory") Boolean ocsInventory,
+                                           //@RequestParam("parte") Boolean parte,
+                                           //@RequestParam("ocsInventory") Boolean ocsInventory,
                                            @RequestParam("urlImage") String urlImage,
                                            @RequestParam(value = "image", required = false)MultipartFile multipartFile
                                            //@RequestParam("idUser") String idUser,
@@ -64,6 +64,7 @@ public class ElementController {
 
         elementEntity.setIdElement(idElement);
         elementEntity.setNameElement(nameElement);
+        elementEntity.setBrand(brand);
         elementEntity.setCpu(cpu);
         elementEntity.setMother(mother);
         elementEntity.setHdd(hdd);
@@ -72,8 +73,8 @@ public class ElementController {
         elementEntity.setIpNumber(ipNumber);
         elementEntity.setWorkplace(workplace);
         elementEntity.setAntivirus(antivirus);
-        elementEntity.setParte(parte);
-        elementEntity.setOcsInventory(ocsInventory);
+        //elementEntity.setParte(parte);
+        //elementEntity.setOcsInventory(ocsInventory);
         elementEntity.setUrlImage(urlImage);
         //productEntity.setUserEntity(idUser);
         //productEntity.setCategoryEntity();
