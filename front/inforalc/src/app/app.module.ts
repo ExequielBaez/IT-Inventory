@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ElementListComponent } from './components/element-list/element-list.component';
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ElementAddComponent } from './components/element-add/element-add.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes : Routes = [
   {path:'', component:HomeComponent},
-  {path:'admin/element', component: ElementListComponent}
+  {path:'admin/element', component: ElementListComponent},
+  {path:'admin/element/add', component: ElementAddComponent},
+  {path:'admin/element/update/:id', component: ElementAddComponent}
 ];
 
 @NgModule({
@@ -19,11 +22,13 @@ const routes : Routes = [
     AppComponent,
     HomeComponent,    
     ElementListComponent, 
-    HeaderAdminComponent
+    HeaderAdminComponent, 
+    ElementAddComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

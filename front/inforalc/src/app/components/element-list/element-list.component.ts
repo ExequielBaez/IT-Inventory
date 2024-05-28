@@ -27,6 +27,11 @@ export class ElementListComponent implements OnInit {
     );
   }
 
-  
+  deleteElementById(idElement:string){
+    this.elementService.deleteElementById(idElement).subscribe(
+        ()=>this.listElements()
+    );
+
+  }
 
 }

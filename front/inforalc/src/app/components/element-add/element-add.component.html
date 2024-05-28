@@ -1,0 +1,106 @@
+<app-header-admin> </app-header-admin>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Sistema de Control de Inventario -   <small>Equipos</small>
+    </h1>
+  
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="">Home</a></li>
+      <li class="breadcrumb-item active">Crear Equipos</li>
+    </ol>
+  
+    <h2>Crear Equipo</h2>
+    <form class="form-horizontal" (ngSubmit)="addElement()" enctype="multipart/form-data">
+        <input type="hidden" [(ngModel)]="idElement">    
+        <div class="form-group">
+        <label class="control-label col-sm-2" for="equipo">Equipo Nro:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "nameElement" type="text" class="form-control" id="equipo" name="equipo"
+          placeholder="Ingrese el numero del equipo" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="marca">Marca:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "brand" type="text" class="form-control" id="marca" name="marca"
+          placeholder="Ingrese la marca del equipo" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="cpu">CPU:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "cpu" type="text" class="form-control" id="cpu" name="cpu"
+          placeholder="Ingrese el modelo de microprocesador" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="mother">Mother:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "mother" type="text" class="form-control" id="mother" name="mother"
+          placeholder="Ingrese el modelo de placa madre" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="hdd">HDD:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "hdd" type="text" class="form-control" id="hdd" name="hdd"
+          placeholder="Ingrese el tamaño disco duro" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="memory">Memoria:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "memory" type="text" class="form-control" id="memory" name="memory"
+          placeholder="Ingrese la memoria" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="so">S.O.:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "so" type="text" class="form-control" id="so" name="so"
+          placeholder="Ingrese el sistema operativo" autocomplete="off" required>
+        </div>
+      </div>      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="nroip">Nro. Ip:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "ipNumber" type="text" class="form-control" id="nroip" name="nroip"
+          placeholder="Ingrese el ip" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="lugar">Lugar:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "workplace" type="text" class="form-control" id="lugar" name="lugar"
+          placeholder="Ingrese la dependencia" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="antivirus">Antivirus:</label>
+        <div class="col-sm-10">
+          <input [(ngModel)] = "antivirus" type="text" class="form-control" id="antivirus" name="antivirus"
+          placeholder="Ingrese antivirus instalado" autocomplete="off" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="img">Imagen:</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control-file" id="img" name="img">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-success">
+            <span class="glyphicon glyphicon-saved"></span> Guardar
+          </button>
+        </div>
+      </div>
+  
+    </form>
+  
+  </div>

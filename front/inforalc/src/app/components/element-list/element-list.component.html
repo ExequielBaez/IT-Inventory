@@ -12,7 +12,7 @@
                 <li class="breadcrumb-item active">Ver Equipos</li>
             </ol>
         
-            <a class="btn btn-primary"> Crear Equipo</a>
+            <a class="btn btn-primary" routerLink="/admin/element/add"> Crear Equipo</a>
             <h2>Equipos</h2>
             <table class="table">
                 <thead>
@@ -43,8 +43,8 @@
                         <td>{{e.ipNumber}}</td>
                         <td>{{e.workplace}}</td>
                         <td>{{e.antivirus}}</td>
-                        <td><button class="btn btn-warning">Editar</button> </td>
-                        <td><button class="btn btn-danger">Eliminar</button>
+                        <td><button class="btn btn-warning" [routerLink]="['/admin/element/update', e.idElement]">Editar</button> </td>
+                        <td><button class="btn btn-danger" (click)="deleteElementById(e.idElement)">Eliminar</button>
                     </tr>
                 </tbody>
             </table>        
