@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementService } from 'src/app/services/element.service';
 import { Element } from 'src/app/common/element';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-element-list',
@@ -28,10 +29,30 @@ export class ElementListComponent implements OnInit {
   }
 
   deleteElementById(idElement:string){
-    this.elementService.deleteElementById(idElement).subscribe(
-        ()=>this.listElements()
-    );
+    Swal.fire({
+      title: "Seguro, Eliminar?",
+      text: "No se podra revertir!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
 
+        this.elementService.deleteElementById(idElement).subscribe(
+          ()=>this.listElements()
+        );
+
+        Swal.fire({
+          title: "Eliminado!",
+          text: "El registro ha sido eliminado.",
+          icon: "success"
+        });
+      }
+    });
+    
   }
 
 }

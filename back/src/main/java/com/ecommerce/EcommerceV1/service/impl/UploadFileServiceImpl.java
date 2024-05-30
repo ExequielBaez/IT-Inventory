@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 public class UploadFileServiceImpl implements UploadFileService {
     private final String FOLDER = "src//main//resources//static//images//";
     private final String IMG_DEFAULT = "no image.jpg";
-    private final String URL = "http://localhost:8080/images/";
+    private final String URL = "http://localhost:9698/images/";
 
     public String upload (MultipartFile multipartFile) throws IOException {
 

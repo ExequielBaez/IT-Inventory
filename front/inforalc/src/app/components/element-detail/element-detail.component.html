@@ -1,0 +1,52 @@
+<app-header-admin> </app-header-admin>
+
+<!-- Page Content -->
+<div class="container">
+
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Sistema de Control de Inventario -   <small>Equipos</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Equipo</li>
+    </ol>
+
+    <!-- Blog Post -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <a href="#"> <img class="img-fluid rounded"
+              src="{{urlImage}}"  alt="">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <form action="#" method="POST">
+              <h2 class="card-title">{{nameElement}}</h2>
+
+              <ul class="list-group">
+                <li class="list-group-item"><h5>Lugar:  {{workplace}} </h5></li>
+                <li class="list-group-item"><h5>Marca:  {{brand}} </h5></li>
+                <li class="list-group-item"><h5>Micro:  {{cpu}} </h5></li>
+                <li class="list-group-item"><h5>Placa Madre:  {{mother}} </h5></li>
+                <li class="list-group-item"><h5>Disco:  {{hdd}} </h5></li>
+                <li class="list-group-item"><h5>Memoria:  {{memory}} </h5></li>
+                <li class="list-group-item"><h5>S.O.:  {{so}} </h5></li>
+                <li class="list-group-item"><h5>Numero IP:  {{ipNumber}} </h5></li>
+                <li class="list-group-item"><h5>Antivirus:  {{antivirus}} </h5></li>
+              </ul>
+
+
+              <button type="submit"  class="btn btn-dark">Button </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->

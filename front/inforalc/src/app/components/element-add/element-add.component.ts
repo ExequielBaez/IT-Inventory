@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ElementService } from 'src/app/services/element.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-element-add',
@@ -22,6 +23,8 @@ export class ElementAddComponent implements OnInit{
   urlImage:string ="";
   idUser:string ="";
   idCategory:string ="";
+
+  selectFile! : File;
 
   constructor(private elementService : ElementService,
               private router : Router,
@@ -48,6 +51,7 @@ export class ElementAddComponent implements OnInit{
     formData.append('ipNumber', this.ipNumber);
     formData.append('workplace',this.workplace);
     formData.append('antivirus', this.antivirus);
+    formData.append('image', this.selectFile)
     formData.append('urlImage', this.urlImage);
     formData.append('idUser',this.idUser);
     formData.append('idCategory',this.idCategory);
@@ -56,9 +60,32 @@ export class ElementAddComponent implements OnInit{
     this.elementService.createElement(formData).subscribe(
       data => {
         console.log(data);
+        if(this.idElement == ""){
+
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Equipo Creado!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+        }else{
+
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Equipo Modificado!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+        }
         this.router.navigate(['admin/element']);  
       }
     );
+
+    
         
   }
 
@@ -89,5 +116,9 @@ export class ElementAddComponent implements OnInit{
         }
       }
     );
+  }
+
+  onFileSelected(event : any){
+    this.selectFile = event.target.files[0];
   }
 }
